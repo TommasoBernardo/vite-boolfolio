@@ -4,9 +4,9 @@ export default {
     name: 'AppMain',
     data(){
         return{
-            post:[],
+            posts:[],
             loading:false,
-            urlAddress: '',
+            urlAddress: 'http://127.0.0.1:8000/api/posts',
         }
     },
     
@@ -17,14 +17,18 @@ export default {
 
                     }
                 })
-                .then( function(response){
-                    console.log(response);
+                .then((response)=>{
+                    this.posts = response.data.results.data;
                 })
                 .catch(function(error){
                     console.warn(error);
                 });
             }
         },
+
+    created(){
+        this.getPosts();
+    }
 }
 </script>
 
