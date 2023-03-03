@@ -23,7 +23,7 @@ export default {
                 <h5 class="card-title"> {{ post.title }}</h5>
                 <h5 class="card-date"> {{ post.date }}</h5>
                 <p class="card-text">{{ post.content.substr(0, 160) }}</p>
-                <router-link class="btn btn-primary">show more</router-link>
+                <router-link :to="{name: 'post', params:{slug: post.slug}}" class="btn btn-primary">show more</router-link>
             </div>
     </div>
     </div>

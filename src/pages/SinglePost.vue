@@ -3,27 +3,27 @@
     import AppPost from '../components/AppPost.vue';
     import axios from 'axios';
 export default {
-    name: 'PostsIndex',
+    name:'SinglePost',
     components: {
-        AppPost
+        AppPost,
     },
     data(){
         return{
-            posts:[],
+            posts:null,
             loading:false,
             urlAddress: 'http://127.0.0.1:8000/api/posts',
         }
     },
     
     methods: {
-            getPosts() {
-                axios.get(this.urlAddress, {
+            getPost() {
+                axios.get(this.urlAddress + `/api/posts/${this.$route.params.slug}`, {
                     params:{
 
                     }
                 })
                 .then((response)=>{
-                    this.posts = response.data.results.data;
+                    this.post = response.data.results;
                 })
                 .catch(function(error){
                     console.warn(error);
@@ -32,27 +32,17 @@ export default {
         },
 
     created(){
-        this.getPosts();
+        this.getPost();
     }
 }
 </script>
 
 <template lang="">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2>Films:</h2>
-            </div>
-        </div>
-    </div>
-<div class="container">
-    <div class="row justify-content-around">
-        <AppPost v-for="post in posts" :post="post" class="col-4" />
-    </div>
-</div>
 
+    <div class="row">
+        <AppPost :post="post" />
+    </div>
 </template>
-
 
 <style lang="">
     

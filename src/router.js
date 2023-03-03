@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from './pages/HomePage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import PostsIndex from './pages/PostsIndex.vue';
+import SinglePost from './pages/SinglePost.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -21,6 +22,11 @@ const router = createRouter({
             path: '/posts',
             name: 'posts',
             component: PostsIndex
+        },
+        {
+            path: '/post/:slug',
+            name: 'post',
+            component: SinglePost
         },
     ]
 });
