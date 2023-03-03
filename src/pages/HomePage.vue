@@ -6,9 +6,12 @@ export default {
 </script>
 
 <template lang="">
-    <div>
-        <h1>ciao</h1>
+    <section>
+        <div class="text-center mt-5">
+        <h1>Welcome in Films-boolfolio!</h1>
     </div>
+    </section>
+
 </template>
 
 
