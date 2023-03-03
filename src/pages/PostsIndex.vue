@@ -1,7 +1,15 @@
 
 <script>
 export default {
-    name: 'PostsIndex'
+    name: 'PostsIndex',
+    data(){
+        return{
+
+        }
+    },
+    mounted(){
+        console.warn(this.route)
+    }
 }
 </script>
 

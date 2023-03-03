@@ -17,13 +17,13 @@ export default {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <router-link class="nav-link active" aria-current="page" :to="{name: 'home'}">Home</router-link>
+                            <router-link class="nav-link" :class="this.$route.name === 'home'? 'active': ''" aria-current="page" :to="{name: 'home'}">Home</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" :to="{name: 'posts'}">Posts</router-link>
+                            <router-link class="nav-link"  :class="this.$route.name === 'posts'? 'active': ''" :to="{name: 'posts'}">Posts</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" :to="{name: 'AboutUs'}">About-Us</router-link>
+                            <router-link class="nav-link"  :class="this.$route.name === 'AboutUs'? 'active': ''" :to="{name: 'AboutUs'}">About-Us</router-link>
                         </li>
                     </ul>
                 </div>
