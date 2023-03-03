@@ -1,9 +1,9 @@
 <script>
-import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 export default{
   name: 'App',
   components: {
-    AppMain,
+      AppHeader,
   },
   data(){
     return{
@@ -14,9 +14,8 @@ export default{
 </script>
 
 <template>
-<main>
-  <AppMain />
-</main>
+  <AppHeader />
+  <router-view></router-view>
 </template>
 
 <style lang="scss">
