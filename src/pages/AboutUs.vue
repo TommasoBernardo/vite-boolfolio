@@ -6,10 +6,10 @@ export default {
 </script>
 
 <template lang="">
-    <div class="text-center">
+    <div class="text-center bg-purple text-white">
         <h1>information</h1>
         <p>
-            scopri tutte le informazioni che desideri attraverso questa pagina!
+            Discover all the information you want through this page!
         </p>
     </div>
 </template>

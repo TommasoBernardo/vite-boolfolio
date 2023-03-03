@@ -8,3 +8,9 @@
 p {
     font-size: 1.5rem
 }
+
+.bg-purple {
+    background-color: darkviolet;
+    width: 100%;
+    height: 100vh;
+}
