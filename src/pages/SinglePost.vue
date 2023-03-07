@@ -1,37 +1,36 @@
 
 <script>
-    import AppPost from '../components/AppPost.vue';
-    import axios from 'axios';
+import AppPost from '../components/AppPost.vue';
+import axios from 'axios';
 export default {
-    name:'SinglePost',
+    name: 'SinglePost',
     components: {
         AppPost,
     },
-    data(){
-        return{
-            posts:null,
-            loading:false,
-            urlAddress: 'http://127.0.0.1:8000/api/posts',
+    data() {
+        return {
+            posts: null,
+            loading: false,
+            urlAddress: 'http://127.0.0.1:8000',
         }
     },
-    
-    methods: {
-            getPost() {
-                axios.get(this.urlAddress + `/api/posts/${this.$route.params.slug}`, {
-                    params:{
 
-                    }
-                })
-                .then((response)=>{
+    methods: {
+        getPost() {
+            axios.get(this.urlAddress + `/api/posts/${this.$route.params.slug}`, {
+                params: {
+                }
+            })
+                .then((response) => {
                     this.post = response.data.results;
                 })
-                .catch(function(error){
+                .catch(function (error) {
                     console.warn(error);
                 });
-            }
-        },
+        }
+    },
 
-    created(){
+    created() {
         this.getPost();
     }
 }
