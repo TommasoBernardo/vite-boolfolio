@@ -1,13 +1,13 @@
 <script>
 export default {
     name: 'AppPost',
-    data(){
-        return{
+    data() {
+        return {
 
         }
     },
-    props:{
-        'post':{
+    props: {
+        'post': {
             type: Object,
             required: true,
         },
